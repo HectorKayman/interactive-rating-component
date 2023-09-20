@@ -42,13 +42,6 @@ const selectRating = function (event) {
 
 // Function to swap cards and show success message card
 const swapCards = function () {
-  // Guard clause if no rating was selected
-  if (rating === 0) return;
-
-  // Update rating span on success card
-  rated.textContent = rating;
-
-  // Swap the cards
   mainCard.classList.toggle('hidden');
   successCard.classList.toggle('hidden');
 };
@@ -63,6 +56,20 @@ ratingsContainer.addEventListener('click', function (e) {
 button.addEventListener('click', function (e) {
   e.preventDefault();
 
+  // Guard clause if no rating was selected
+  if (rating === 0) return;
+
+  // Update rating span on success card
+  rated.textContent = rating;
+
   // Call the function for swapping cards
   swapCards();
+});
+
+// Event listener for escape key when success card is visible
+document.addEventListener('keydown', function (event) {
+  if (!successCard.classList.contains('hidden') && event.key === 'Escape') {
+    resetRating();
+    swapCards();
+  }
 });
