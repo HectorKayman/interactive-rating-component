@@ -1,5 +1,10 @@
 'use strict';
 
+// Cards
+const mainCard = document.querySelector('#main-card');
+const successCard = document.querySelector('#success-card');
+
+// Inner Elements
 const ratingsContainer = document.querySelector('#ratings');
 const button = document.querySelector('button');
 const rated = document.querySelector('#rated');
@@ -35,7 +40,29 @@ const selectRating = function (event) {
   console.log(rating);
 };
 
+// Function to swap cards and show success message card
+const swapCards = function () {
+  // Guard clause if no rating was selected
+  if (rating === 0) return;
+
+  // Update rating span on success card
+  rated.textContent = rating;
+
+  // Swap the cards
+  mainCard.classList.toggle('hidden');
+  successCard.classList.toggle('hidden');
+};
+
+// Event listener for ratings
 ratingsContainer.addEventListener('click', function (e) {
   // Call the function to select the clicked rating
   selectRating(e);
+});
+
+// Event listener for submit button
+button.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Call the function for swapping cards
+  swapCards();
 });
