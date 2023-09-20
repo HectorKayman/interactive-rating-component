@@ -606,6 +606,10 @@ video {
   max-width: 28rem;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -713,4 +717,8 @@ video {
 .text-light-grey {
   --tw-text-opacity: 1;
   color: hsl(217 12% 63% / var(--tw-text-opacity));
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
