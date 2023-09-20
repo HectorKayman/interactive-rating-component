@@ -22,3 +22,4 @@ README-template.md
 
 # Avoide Node modules
 node_modules/
+.parcel-cache/
