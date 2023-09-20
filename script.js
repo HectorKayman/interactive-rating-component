@@ -4,8 +4,10 @@ const ratingsContainer = document.querySelector('#ratings');
 const button = document.querySelector('button');
 const rated = document.querySelector('#rated');
 
+// Stores selected rating
 let rating = 0;
 
+// Resets previously selected rating
 const resetRating = function () {
   ratingsContainer.querySelectorAll('span').forEach((item) => {
     item.classList.add('bg-medium-grey');
@@ -14,16 +16,26 @@ const resetRating = function () {
   });
 };
 
-ratingsContainer.addEventListener('click', function (e) {
+// Function to select a clicked rating
+const selectRating = function (event) {
   const ratingList = ['one', 'two', 'three', 'four', 'five'];
 
-  if (ratingList.includes(e.target.id)) {
+  if (ratingList.includes(event.target.id)) {
+    // Unselects a previously selected rating
     resetRating();
-    e.target.classList.remove('bg-medium-grey');
-    e.target.classList.add('bg-normal-grey');
-    e.target.classList.add('text-white');
 
-    rating = ratingList.indexOf(e.target.id) + 1;
+    // Selects the currently clicked rating
+    event.target.classList.remove('bg-medium-grey');
+    event.target.classList.add('bg-normal-grey');
+    event.target.classList.add('text-white');
+
+    // Stores the rating into a variable
+    rating = ratingList.indexOf(event.target.id) + 1;
   }
   console.log(rating);
+};
+
+ratingsContainer.addEventListener('click', function (e) {
+  // Call the function to select the clicked rating
+  selectRating(e);
 });
