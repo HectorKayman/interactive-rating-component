@@ -1,3 +1,3 @@
 import './src/index.html';
-import './dist/output.css';
+import './docs/output.css';
 import './src/script.js';
