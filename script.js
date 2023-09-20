@@ -37,7 +37,6 @@ const selectRating = function (event) {
     // Stores the rating into a variable
     rating = ratingList.indexOf(event.target.id) + 1;
   }
-  console.log(rating);
 };
 
 // Function to swap cards and show success message card
