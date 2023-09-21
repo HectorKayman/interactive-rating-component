@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Repository](https://your-solution-url.com)
-- Live Site URL: [Github Live Page](https://your-live-site-url.com)
+- Solution URL: [Github Repository](https://github.com/HectorKayman/interactive-rating-component)
+- Live Site URL: [Github Live Page](https://hectorkayman.github.io/interactive-rating-component/)
 
 ## My process
 
